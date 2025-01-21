@@ -1,0 +1,38 @@
+
+name: 'nx_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'Nsx'
+
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  
+clean-targets:         
+  - "target"
+  - "dbt_packages"
+
+
+
+models:
+    nx_project:
+        nsx:
+        
+            stage:
+                +materialized: table
+            dimension:
+                +materialized: table
+            fact:
+                +materialized: table
+            
+vars:
+    titles_raw: 'PROD.DBT_RAW.TITLES'
+    TAG_DIMENSION: 'DIMENSION'
+    TAG_FACT: 'FACT'
+    TAG_TEST: 'TEST'  

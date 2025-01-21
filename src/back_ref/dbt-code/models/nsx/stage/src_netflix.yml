@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: nsx1
+    database: PROD
+    schema: DBT_RAW
+    tables:
+      - name: DATA1
+      - name: DATA2
